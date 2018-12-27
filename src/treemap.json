@@ -1,0 +1,54 @@
+[{
+  "name": "nodeA",
+  "value": 10,
+  "children": [
+    {
+      "name": "nodeAa",
+      "children": [
+        { "name": "nodeAc", "value": 6 },
+        { "name": "nodeAd", "value": 8 }
+      ]
+    },
+    {
+      "name": "nodeAb",
+      "value": 6
+    }
+  ]
+},
+{
+  "name": "nodeB",
+  "children": [
+    {
+      "name": "nodeBa",
+      "children": [
+        {
+          "name": "nodeBa1",
+          "children": [
+            {
+              "name": "nodeC",
+              "value": 10,
+              "children": [
+                {
+                  "name": "nodeE",
+                  "value": 6
+                },
+                {
+                  "name": "nodeF",
+                  "value": 2
+                },
+                {
+                  "name": "nodeG",
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "name": "nodeD",
+              "value": 15
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}]
