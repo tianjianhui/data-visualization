@@ -53,6 +53,9 @@ export default {
                 // console.log(coordinate);
                 this.context.beginPath();
                 this.context.strokeStyle = 'lime';
+                this.context.lineWidth = 30;
+                this.context.lineCap = 'round';
+                this.context.lineJoin = 'round';
                 this.context.moveTo(coordinate.x,coordinate.y);
             };
             this.canvas.onmousemove = (e)=>{

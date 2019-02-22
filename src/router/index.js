@@ -51,7 +51,10 @@ export default new Router({
     {
       path: '/canvas/five',
       name: 'canvasFive',
-      component: canvasFive
+      component: canvasFive,
+      meta:{
+        keepAlive:true //需要被缓存的组件
+    } 
     },
     {
       path: '/layouts',
