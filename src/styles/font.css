@@ -1,0 +1,56 @@
+@font-face {
+  font-family: 'iconfont';  /* project id 1109755 */
+  src: url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.eot');
+  src: url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1109755_fe9qe8nr6km.svg#iconfont') format('svg');
+}
+  .icon {
+    position: relative;
+    display: inline-block;
+    font-family: 'iconfont';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .icon-barChart:before {
+    content: "\e66d";
+  }
+  
+  .icon-pieChart:before {
+    content: "\e6de";
+  }
+  
+  .icon-home:before {
+    content: "\e619";
+  }
+  
+  .icon-areachart:before {
+    content: "\e7af";
+  }
+  
+  .icon-lineChart:before {
+    content: "\e6f8";
+  }
+  
+  .icon-map:before {
+    content: "\e62a";
+  }
+
+  .icon-map1:before {
+    content: "\e6d6"
+  }
+
+  .icon-ring:before {
+    content: "\e7b0"
+  }
+
+  .icon-radar:before {
+    content: "\e7dc"
+  }
+
+  

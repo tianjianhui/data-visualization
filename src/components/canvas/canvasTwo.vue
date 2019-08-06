@@ -1,8 +1,8 @@
 <template>
     <div class="canvasTwo">
-        <span>X:</span><el-input placeholder="请输入起始横坐标" v-model="rect.x" clearable></el-input>
-        <span>y:</span><el-input placeholder="请输入起始纵坐标" v-model="rect.y" clearable></el-input>
-        <span>width:</span><el-input placeholder="请输入矩形宽度" v-model="rect.w" clearable></el-input>
+        <span>X:</span><el-input placeholder="请输入起始横坐标" type="number" v-model.number="rect.x" clearable></el-input>
+        <span>y:</span><el-input placeholder="请输入起始纵坐标" v-model.trim="rect.y" clearable></el-input>
+        <span>width:</span><el-input placeholder="请输入矩形宽度" v-model.lazy="rect.w" clearable></el-input>
         <span>height:</span><el-input placeholder="请输入矩形高度" v-model="rect.h" clearable></el-input>
         <span>r:</span><el-input placeholder="请输入圆角" v-model="rect.r" clearable></el-input>
         <el-button type="primary" @click="drawRect(context,rect)">绘制圆角矩形</el-button>

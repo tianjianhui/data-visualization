@@ -8,6 +8,7 @@
     </div>
 </template>
 <script>
+import Bus from '../../js/bus'
 export default {
     name: 'canvasOne',
     data(){
@@ -61,7 +62,10 @@ export default {
     // })
     // },
     created(){
-       
+        console.log('canvasOne')
+       Bus.$on('msg',(res)=>{
+           console.log('res',res)
+       })
     }
 }
 </script>

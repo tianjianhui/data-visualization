@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <el-container class="wrapper">
-      <el-header style="line-height:60px;background-color:skyblue;text-align:center;">数据可视化
+      <el-header style="line-height:60px;background-color:skyblue;text-align:center;">
+        数据可视化
         <el-color-picker class="colorPicker"
           v-model="color"
           show-alpha
@@ -14,8 +15,8 @@
             <el-menu :default-active="route" class="el-menu-vertical-demo" :collapse="isCollapse" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" router>
               <el-submenu index="1">
                 <template slot="title">
-                  <!-- <i class="el-icon-location"></i> -->
-                  <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                  <i class="icon icon-chart"></i>
+                  <!-- <i class="fa fa-map-marker fa-lg" aria-hidden="true"></i> -->
                   <span slot="title">Canvas</span>
                 </template>
                 <el-menu-item-group>
@@ -24,6 +25,7 @@
                   <el-menu-item index="/canvas/three">canvas-three</el-menu-item>
                   <el-menu-item index="/canvas/four">canvas-four</el-menu-item>
                   <el-menu-item index="/canvas/five">canvas-five</el-menu-item>
+                  <el-menu-item index="/canvas/clip">canvas-clip</el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="2">
@@ -34,6 +36,7 @@
                 </template>
                 <el-menu-item-group>
                   <el-menu-item index="/layouts">layouts</el-menu-item>
+                  <el-menu-item index="/d3/select">d3选择器</el-menu-item>
                 </el-menu-item-group>
               </el-submenu>
               <el-submenu index="3">
@@ -43,14 +46,14 @@
                   <span slot="title">Echarts</span>
                 </template>
                 <el-menu-item-group>
-                  <el-menu-item index="/echarts/bar">柱状图</el-menu-item>
-                  <el-menu-item index="/echarts/geographical">地图</el-menu-item>
-                  <el-menu-item index="/echarts/lineGraph">折线图</el-menu-item>
-                  <el-menu-item index="/echarts/pieRing">内饼外环图</el-menu-item>
-                  <el-menu-item index="/echarts/pieGraph">饼图</el-menu-item>
+                  <el-menu-item index="/echarts/bar"><i class="icon icon-barChart"></i> 柱状图</el-menu-item>
+                  <el-menu-item index="/echarts/geographical"><i class="icon icon-map1"> </i>地图</el-menu-item>
+                  <el-menu-item index="/echarts/lineGraph"><i class="icon icon-lineChart"></i> 折线图</el-menu-item>
+                  <el-menu-item index="/echarts/pieRing"><i class="icon icon-ring"></i>内饼外环图</el-menu-item>
+                  <el-menu-item index="/echarts/pieGraph"><i class="icon icon-pieChart"></i> 饼图</el-menu-item>
                   <el-menu-item index="/echarts/polar">极坐标</el-menu-item>
                   <el-menu-item index="/echarts/polarBar">极坐标柱状图</el-menu-item>
-                  <el-menu-item index="/echarts/radar">雷达图</el-menu-item>
+                  <el-menu-item index="/echarts/radar"><i class="icon icon-radar"></i>雷达图</el-menu-item>
                   <el-menu-item index="/echarts/scatter">散点图</el-menu-item>
                   <el-menu-item index="/echarts/tree">树图</el-menu-item>
                   <el-menu-item index="/echarts/treemap">矩形树</el-menu-item>
@@ -72,6 +75,7 @@
 </template>
 
 <script>
+console.log('app.vue')
 export default {
   name: 'App',
   data(){
@@ -94,18 +98,27 @@ export default {
         '#c7158577'
       ],
       color: 'rgba(255,255,255,1)',
-      route: '/'     //加载页面的路由
+      route: '/',     //加载页面的路由
+      storage: ''
     }
   },
   methods: {
     bindColor: function(){
-      console.log('999')
       this.$refs.coreBody.style.backgroundColor = this.color;
+      this.storage.setItem('color',this.color);
     }
   },
   created(){
     this.route = this.$route.path;
-    console.log(this.route);
+    this.storage = window.localStorage;
+  },
+  mounted(){
+    this.$nextTick(function(){
+      if(this.storage.getItem('color')){
+        this.color = this.storage.getItem('color');
+        this.$refs.coreBody.style.backgroundColor =  this.color;  // 如果缓存的有颜色，加载时取缓存的颜色为背景色
+      }
+    })
   }
 }
 </script>
