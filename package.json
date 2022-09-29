@@ -12,7 +12,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "d3": "^5.9.1",
+    "d3": "^7.6.1",
     "echarts": "^4.1.0",
     "element-ui": "^2.5.4",
     "font-awesome": "^4.7.0",
